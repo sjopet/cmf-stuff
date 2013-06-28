@@ -1,0 +1,16 @@
+{% block oms_link_row %}
+{% spaceless %}
+    <li class="form-row" style="display: none;">
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#{{ form.linkType.vars.id }}').change(function() {
+                    var value = $(this).val();
+                    $('#sonata-ba-field-container-{{ form.linkUrl.vars.id }}').css('display', (value == 'external') ? 'inline-block' : 'none');
+                    $('#sonata-ba-field-container-{{ form.linkDocument.vars.id }}').css('display', (value == 'internal') ? 'inline-block' : 'none');
+                });
+                $('#{{ form.linkType.vars.id }}').trigger('change');
+	</script>
+    </li>
+{% endspaceless %}
+{% endblock %}
